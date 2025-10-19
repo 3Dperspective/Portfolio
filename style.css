@@ -1,0 +1,55 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: comic sans ms;
+}
+
+.nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 95, 135);
+    height: 120px;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+  width: 30%;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40%;
+  padding-right: 20%;
+}
+
+.bg {
+    margin-bottom: 40%;
+    transform: translateY(0);
+    z-index: 0;
+}
+
+.parallax-bg {
+
+  top: 0;
+  left: 0;
+
+  background-size: cover;
+  background-position: center;
+
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.content {
+    text-align: center;
+    background-color: white;
+    padding: 80px 10%;
+    min-height: 150vh;
+}
