@@ -1,0 +1,65 @@
+@font-face {
+  font-family: Inter;
+  src: url(font/inter-vietnamese-800-normal.woff2);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+}
+
+.nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 95, 135);
+    height: 15vh;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+  height: 15vh;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40%;
+  padding-right: 20%;
+}
+
+.nav-links img {
+  max-width: 80px;
+}
+
+.bg {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  background-image: url(img/BannerLogoless.png);
+  background-position: right 0px top 15vh;
+  background-size: 100vw;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  padding-top: 30vh;
+  padding-bottom: 20vh;
+}
+
+.content {
+    text-align: center;
+    background-color: white;
+    padding: 80px 10%;
+    min-height: 150vh;
+}
