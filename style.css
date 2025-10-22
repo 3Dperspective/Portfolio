@@ -1,7 +1,12 @@
+@font-face {
+  font-family: Inter;
+  src: url(font/inter-vietnamese-800-normal.woff2);
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  font-family: comic sans ms;
+  font-family: Inter;
 }
 
 .nav {
@@ -10,14 +15,13 @@ html, body {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(0, 95, 135);
-    height: 120px;
+    height: 15vh;
     width: 100%;
     z-index: 100;
 }
 
 .logo {
-  width: 30%;
-  height: auto;
+  height: 15vh;
 }
 
 .nav-links {
@@ -26,25 +30,31 @@ html, body {
   padding-right: 20%;
 }
 
+.nav-links img {
+  max-width: 80px;
+}
+
 .bg {
-    margin-bottom: 40%;
-    transform: translateY(0);
-    z-index: 0;
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  background-image: url(img/BannerLogoless.png);
+  background-position: right 0px top 15vh;
+  background-size: 100vw;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
-.parallax-bg {
-
-  top: 0;
-  left: 0;
-
-  background-size: cover;
-  background-position: center;
-
-}
-
-.hero-content h1 {
+h1 {
+  text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  padding-top: 30vh;
+  padding-bottom: 20vh;
 }
 
 .content {
