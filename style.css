@@ -1,12 +1,10 @@
-@font-face {
-  font-family: Inter;
-  src: url(font/inter-vietnamese-800-normal.woff2);
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: Inter;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
 }
 
 .nav {
@@ -14,10 +12,12 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(0, 95, 135);
+    background-color: rgb(90, 245, 255);
+    background-image: linear-gradient(rgb(0, 0, 140, .8), rgba(0, 140, 255));
     height: 15vh;
     width: 100%;
     z-index: 100;
+    top: 0; left:0; 
 }
 
 .logo {
@@ -26,8 +26,22 @@ html, body {
 
 .nav-links {
   display: flex;
-  gap: 40%;
-  padding-right: 20%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(1rem, 4vw, 5rem); /* scales smoothly when zooming */
+  font-size: clamp(1rem, 1.2vw, 1.4rem); /* text scales proportionally */
+  height: 100%; /* match the logo’s vertical alignment */
+  padding-right: 4vw; /* keep spacing from right edge */
+}
+
+.nav-links a {
+  color: rgb(0, 20, 120);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(45 210 190); /* Color of the link when hovered */
+  text-decoration:wavy;
 }
 
 .nav-links img {
@@ -59,7 +73,84 @@ h1 {
 
 .content {
     text-align: center;
-    background-color: white;
-    padding: 80px 10%;
+    background-color: rgb(0, 20, 120);
+    padding: 10 10%;
     min-height: 150vh;
+    color: rgb(255, 255, 255);
+}
+
+.yt-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.yt-videos iframe {
+  max-width: 550px;
+  width: 550px;
+  height: 300px;
+  border: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery img {
+  max-width: 400px;
+  width: 400px;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Image Modal Styling */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 200;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(48, 48, 48, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: rgb(122, 122, 122);
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.gallery img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+#imgCaption {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
 }

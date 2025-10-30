@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/x-icon" href="img/Logo_1.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>3Dperspective's Portfolio</title>
+</head>
+
+<body>
+  <div class="nav">
+
+    <a href="index.html" title="Home">
+      <img src="img/Logo_Full.png" alt="3Dperspective Logo Image" class="logo">    
+    </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="portfolio.html">Portfolio</a>
+            <a href="#">Services</a>
+            <a href="#">About Me</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
+    <h1>Portfolio</h1>
+
+  <section class="content">
+    <h2>ANIMATION</h2>
+    <p>Below are some of the youtube videos I've made during the past year to improve my animation skills.</p>
+
+<!--Youtube Video Gallery-->
+    <div class="yt-videos">
+      <iframe src="https://www.youtube.com/embed/z6ysheZzSiI?si=9OfEbc2DfNzN0fas" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/o3epmMm73WE?si=g2BkaTnk-PtF8oY5" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/-sI_Rz1HOEM?si=fagG-1RTpzBBFXd6&amp;start=40" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/SPFf0qa8nME?si=3y2laSV0fBFf-7Yq" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/zWblwx0avnE?si=gS8VY6uVqUOiQukY" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/5UJ-MR58gpo?si=_CLzurXIZFkI-105" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/i_cNRQrRyTw?si=HtqPyqn2vfIP9X85" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/YNmvBrA3W-s?si=kXusAal5lBMjusOd" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <h3>CHARACTER MODELING</h3>
+      <img src="">
+<!--Yeeps Thumbnail Gallery-->
+    <h4>CUSTOM THUMBNAILS</h4>
+    <div class="gallery">
+      <img src="img/Portfolio/YeepsBadges.png">
+      <img src="img/Portfolio/VitaeYeepsUndercoverVideoThumbnailFINAL.png">
+      <img src="img/Portfolio/OfficialYeepsThunbnailTemplateDraft2.png">
+      <img src="img/Portfolio/YeepsCooking.png">
+
+      <img src="img/Portfolio/YeepsGoldenFireburst.png">
+      <img src="img/Portfolio/YeeperInThePizzaria.png">
+      <img src="img/Portfolio/ClearingTheSmokeTrio.png">
+      <img src="img/Portfolio/SuperSayianGokuYeep.png">
+
+      <img src="img/Portfolio/YeepsOnlyUp.png">
+      <img src="img/Portfolio/YeepsCommunityWorlds.png">      
+      <img src="img/Portfolio/YeepsLastToLeaveCircle.png">
+      <img src="img/Portfolio/YeepsMonster.png">
+
+      <img src="img/Portfolio/YeepsBugsUpdate2.png">
+      <img src="img/Portfolio/YeepsBugsUpdate3.png">
+      <img src="img/Portfolio/YeepsBugUpdate1.png">
+      <img src="img/Portfolio/YeepsBugUpdate2.png">
+      
+      <img src="img/Portfolio/YeepsSkybase.png">
+      <img src="img/Portfolio/YeepsTapTag.png">
+      <img src="img/Portfolio/YeepsUndercover.png">
+    </div>
+  </section>
+
+<!-- Image Modal -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="imgCaption"></div>
+
+</div>
+
+<script>
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const caption = document.getElementById("imgCaption");
+const closeBtn = document.querySelector(".close");
+
+const galleryImages = Array.from(document.querySelectorAll(".gallery img"));
+let currentIndex = 0;
+
+function openModal(index) {
+  currentIndex = index;
+  modal.style.display = "block";
+  modalImg.src = galleryImages[index].src;
+  caption.textContent = getFileName(galleryImages[index].src);
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Extract filename (cleaned up version)
+function getFileName(src) {
+  let name = src.split('/').pop().split('.')[0];
+  return name.replace(/_/g, ' ');
+}
+
+// Open modal on click
+galleryImages.forEach((img, index) => {
+  img.addEventListener("click", () => openModal(index));
+});
+
+// Close modal on click outside or with X
+closeBtn.onclick = closeModal;
+modal.onclick = e => { if (e.target === modal) closeModal(); };
+
+// Optional: arrow key navigation + ESC close
+document.addEventListener("keydown", e => {
+  if (modal.style.display === "block") {
+    if (e.key === "ArrowRight") {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+      caption.textContent = getFileName(galleryImages[currentIndex].src);
+    }
+    if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      modalImg.src = galleryImages[currentIndex].src;
+      caption.textContent = getFileName(galleryImages[currentIndex].src);
+    }
+    if (e.key === "Escape") closeModal();
+  }
+});
+</script>
+
+
+</body>
+
+</html>
