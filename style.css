@@ -12,8 +12,10 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(90, 245, 255);
-    background-image: linear-gradient(rgb(0, 0, 140, .8), rgba(0, 140, 255));
+    background-color: rgb(255, 255, 255);
+    background-image: 
+      linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 225, 255, 0.4)),      
+      linear-gradient(to left, rgba(0, 0, 140), rgba(0, 140, 255));
     height: 15vh;
     width: 100%;
     z-index: 100;
@@ -21,7 +23,7 @@ html, body {
 }
 
 .logo {
-  height: 15vh;
+  height: 10vh;
 }
 
 .nav-links {
@@ -35,7 +37,7 @@ html, body {
 }
 
 .nav-links a {
-  color: rgb(0, 20, 120);
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -90,7 +92,7 @@ h1 {
   max-width: 550px;
   width: 550px;
   height: 300px;
-  border: none;
+  border-radius: 15px;
 }
 
 .gallery {
@@ -153,4 +155,29 @@ h1 {
   text-align: center;
   font-size: 1.2rem;
   margin-top: 10px;
+}
+
+/* Mobile / small screen layout */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;      /* stack logo and links */
+    align-items: center;         /* center horizontally */
+    height: auto;                /* let it grow */
+    padding: 1rem 0;
+  }
+
+  .nav-links {
+    flex-direction: column;      /* stack links vertically */
+    gap: 1rem;                   /* smaller gap for stacked links */
+    padding-right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;           /* adjust font size for mobile */
+  }
+
+  .logo {
+    height: 80px;                /* shrink logo a bit if needed */
+    margin-bottom: 0.5rem;
+  }
 }
