@@ -39,8 +39,8 @@
     <input type="text" id="dueDate" name="dueDate" placeholder="Due date">
 
     <button>Submit Request</button>
-    <form method="post">
-    
+    <p id="status" style="margin-top:10px; font-weight:bold;"></p>
+
   </form>
 
 
@@ -59,7 +59,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
   const status = document.getElementById("status"); // optional: a <p> or <span> for messages
   status.textContent = "Sending...";
 
-  emailjs.sendForm("service_03g8xmx", "service_03g8xmx", this)
+  emailjs.sendForm("service_03g8xmx", "template_dyc69ga", this)
     .then(function() {
       status.textContent = "✅ Email sent successfully!";
       document.getElementById("contact-form").reset(); // clears the form
