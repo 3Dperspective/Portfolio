@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/x-icon" href="img/Logo_1.png">
+<link rel="stylesheet" href="style.css">
+<title>3Dperspective's Portfolio</title>
+</head>
+
+<body>
+  <div class="nav">
+
+    <a href="index.html" title="Home">
+      <img src="img/Logo_Full.png" alt="3Dperspective Logo Image" class="logo">    
+    </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="portfolio.html">Portfolio</a>
+            <a href="#">Services</a>
+            <a href="#">About Me</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
+    <h1>Commissions</h1>
+
+  <section class="content">
+    <h2>Request a Commission</h2>
+  <form id="contact-form">
+
+    <label>Name*</label>
+    <input type="text" id="firstName" name="firstName" placeholder="First" required>
+    <input type="text" id="lastName" name="lastName" placeholder="Last" required>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+
+    <label>Short Description of Request (3-5 sentences)*</label>
+    <input type="text" id="description" name="description" placeholder="Type a brief description" required><br><br>
+
+    <label>Date you need it completed by</label>
+    <input type="text" id="dueDate" name="dueDate" placeholder="Due date">
+
+    <button>Submit Request</button>
+    <form method="post">
+    
+  </form>
+
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your public key
+  (function(){
+    emailjs.init("0Z9rU3F2sK68FwN67"); // 👈 Replace with your actual public key
+  })();
+</script>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent normal form submission
+
+  const status = document.getElementById("status"); // optional: a <p> or <span> for messages
+  status.textContent = "Sending...";
+
+  emailjs.sendForm("service_03g8xmx", "service_03g8xmx", this)
+    .then(function() {
+      status.textContent = "✅ Email sent successfully!";
+      document.getElementById("contact-form").reset(); // clears the form
+    }, function(error) {
+      console.error(error);
+      status.textContent = "❌ Failed to send: " + JSON.stringify(error);
+    });
+});
+</script>
+
+</body>
+</html>
