@@ -15,13 +15,17 @@
 
         <nav class="nav-links" id="navLinks">
             <a href="portfolio.html">Portfolio</a>
-            <a href="#">Services</a>
+            <a href="commissions.html">Commissions</a>
             <a href="#">About Me</a>
             <a href="#">Contact</a>
         </nav>
     </div>
 
+  <section class="bg">
+    <section class="comm">
     <h1>Commissions</h1>
+    </section>
+   </section>
 
   <section class="content">
     <h2>Request a Commission</h2>
@@ -29,15 +33,16 @@
 
     <label>Name*</label>
     <input type="text" id="firstName" name="firstName" placeholder="First" required>
-    <input type="text" id="lastName" name="lastName" placeholder="Last" required>
-    <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+    <input type="text" id="lastName" name="lastName" placeholder="Last" required><br><br>
 
-    <label>Short Description of Request (3-5 sentences)*</label>
-    <input type="text" id="description" name="description" placeholder="Type a brief description" required><br><br>
 
-    <label>Date you need it completed by</label>
-    <input type="text" id="dueDate" name="dueDate" placeholder="Due date">
+    <label>Short Description of Request (3-5 sentences)*</label><br>
+    <textarea id="description" name="description" placeholder="Type a brief description" required class="description"></textarea><br><br>
 
+    <label>Date you need it completed by</label><br>
+    <input type="text" id="dueDate" name="dueDate" placeholder="Due date"><br><br>
+
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
     <button>Submit Request</button>
     <p id="status" style="margin-top:10px; font-weight:bold;"></p>
 
@@ -67,6 +72,15 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       console.error(error);
       status.textContent = "❌ Failed to send: " + JSON.stringify(error);
     });
+});
+</script>
+
+<script>
+// Prevent Enter key from submitting the form
+document.getElementById("contact-form").addEventListener("keydown", function(event) {
+  if (event.key === "Enter" && event.target.tagName !== "TEXTAREA") {
+    event.preventDefault();
+  }
 });
 </script>
 
