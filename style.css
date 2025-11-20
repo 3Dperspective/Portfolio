@@ -12,7 +12,6 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(255, 255, 255);
     background-image: 
       linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 225, 255, 0.4)),      
       linear-gradient(to left, rgba(0, 0, 140), rgba(0, 140, 255));
@@ -51,15 +50,13 @@ a:hover {
 }
 
 .bg {
-  position: relative;
-  width: 100vw;
+  width: 100;
   display: flex;
   justify-content: center;
   overflow: hidden;
 
   background-image: url(img/BannerLogoless.png);
-  background-position: right 0px top 15vh;
-  background-size: 100vw;
+  background-position: top 20vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
   z-index: 0;
@@ -93,7 +90,7 @@ h1 {
     min-height: 150vh;
     color: rgb(255, 255, 255);
     background-image:      
-      linear-gradient(to bottom, rgba(0, 0, 140), rgba(0, 140, 255));
+      linear-gradient(to bottom, rgb(0, 0, 140), rgba(0, 140, 255));
 }
 
 .yt-videos {
@@ -179,6 +176,15 @@ input {
   border-radius: 10px;
 }
 
+.backVideo {
+  position: fixed;
+  right: 0;
+  top: 10px;
+  bottom: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+
 .description {
   width: 400px;
   height: 150px; /* enough space for 3–5 sentences */
@@ -202,6 +208,47 @@ button:hover {
   background-image: linear-gradient(to bottom, rgb(79, 18, 179), rgb(165, 84, 202));
     border: 5px solid white;
 }
+
+.lang-toggle-wrapper {
+  margin-top: 500px;     /* pushes it downward */
+  text-align: center;
+}
+
+#lang-toggle {
+  display: inline-block;
+  background-image: linear-gradient(to top, rgb(79, 18, 179), rgb(165, 84, 202));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+#lang-toggle:hover {
+  background-image: linear-gradient(to bottom, rgb(79, 18, 179), rgb(165, 84, 202));
+  border: 5px solid white;
+}
+
+/*Japanese version specific*/
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+html[lang="ja"], html[lang="ja"] body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
+  font-weight: 400;
+  line-height: 1.6; /* optional: better readability for Japanese text */
+}
+
+html[lang="ja"], html[lang="ja"] h1 {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
 
 /* Mobile / small screen layout */
 @media (max-width: 768px) {
