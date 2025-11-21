@@ -50,16 +50,11 @@ a:hover {
 }
 
 .bg {
-  width: 100;
+  width: 100%;
   display: flex;
   justify-content: center;
   overflow: hidden;
-
-  background-image: url(img/BannerLogoless.png);
-  background-position: top 20vh;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  z-index: 0;
+  color: white;
 }
 
 .comm {
@@ -76,6 +71,7 @@ a:hover {
 }
 
 h1 {
+  color: white;
   text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
@@ -176,13 +172,15 @@ input {
   border-radius: 10px;
 }
 
-.backVideo {
+.backgroundElement {
   position: fixed;
-  right: 0;
-  top: 10px;
+  left: 50vw;
+  top: 40vh;
   bottom: 0;
   z-index: -10;
   overflow: hidden;
+  transform: translate(-50%, -50%);
+  max-width: 120vw;
 }
 
 .description {
