@@ -7,48 +7,47 @@
 </head>
 
 <body>
-<div class="nav">
-        <a href="index_jp.html" title="Home">
-            <img src="img/Logo_Full.png" alt="3Dperspective Logo Image" class="logo">    
-        </a>
+  <div class="nav">
+
+    <a href="index.html" title="Home">
+      <img src="img/Logo_Full.png" alt="3Dperspective Logo Image" class="logo">    
+    </a>
 
         <nav class="nav-links" id="navLinks">
-            <a href="portfolio_jp.html">ポートフォリオ</a>
-            <a href="commissions_jp.html">コミッション</a>
-            <a href="#">会社概要</a>
-            <a href="#">メッセージ</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="commissions.html">Commissions</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </div>
-          
+
   <section class="bg">
     <section class="commissionsBg">
-    <h1>ポートフォリオ</h1>
+    <h1>Contact Me</h1>
     </section>
-   </section>
+  </section>
 
   <section class="content">
-    <h2>コミッションをリクエストする</h2>
+  <h2>Send a Message</h2>
   <form id="contact-form">
 
-    <label>名前*</label>
-    <input type="text" id="firstName" name="firstName" placeholder="初め" required>
-    <input type="text" id="lastName" name="lastName" placeholder="最後" required><br><br>
+    <label>Name*</label>
+    <input type="text" id="firstName" name="firstName" placeholder="First" required>
+    <input type="text" id="lastName" name="lastName" placeholder="Last" required><br><br>
 
+    <label>Message*</label><br>
+    <textarea id="description" name="description" placeholder="Type a brief description" required class="description"></textarea><br><br>
 
-    <label>リクエストの簡単な説明（3～5文）*</label><br>
-    <textarea id="description" name="description" placeholder="簡単な説明を入力します" required class="description"></textarea><br><br>
-
-    <label>完了希望日</label><br>
-    <input type="text" id="dueDate" name="dueDate" placeholder="2つの日付"><br><br>
-
-    <input type="email" id="email" name="email" placeholder="メールアドレスを入力してください" required>
-    <button>リクエストの送信</button>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    <button>Send a message</button>
     <p id="status" style="margin-top:10px; font-weight:bold;"></p>
-
   </form>
-
+<p>*Required field</p>
+<br>
+<p>You can also contact me by joining <a src=https://discord.gg/rTpXpekEPE>my discord server</a>. My username is just "3dperspective"</p> 
+  
   <div class="lang-toggle-wrapper">
-      <a href="commissions.html" id="lang-toggle">English</a>
+      <a href="commissions_jp.html" id="lang-toggle">日本語 (Japanese)</a>
   </div>
   </section>
 
